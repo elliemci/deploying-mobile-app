@@ -1,24 +1,18 @@
-const AppConfig = 
+const AppConfig =
 
 {
     title : "Food Classifier"
     ,description: `
-    
-This mobile app was developed by 
-- [Nidhin Pattaniyil](https://npatta01.github.io)
-- [Reshama Shaikh](https://reshamas.github.io/)
 
-This app lets you submit a photo of food and returns the predicted food category. 🍕
+This app predicts a food category of a submited image. 
 
-The model was developed using the [Food-101 dataset](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) and TensorFlow 2.3.0.
-    
-This is a Manning [liveProject](https://liveproject.manning.com).
+The model was trained using the [Food-101 dataset](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) and TensorFlow 2.4.0.
 
-Notes:  
-- Time to inference will vary by user as it is dependent on the hardware.  
+Notes:
+- Time to inference will vary by user as it is dependent on the hardware.
     `
     ,imageSize :224
-    ,topK:3 
+    ,topK:3
     ,precision:2
 
 };
