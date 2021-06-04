@@ -39,7 +39,7 @@ tensorflowjs_converter \
 --input_format=keras \
 --output_format=tfjs_graph_model \
 --split_weights_by_layer \
---weight_shard_size_bytes=99999999 \
+--weight_shard_size_bytes=50000000 \
 --quantize_float16=* \
 artifacts/model_tf_keras.h5 artifacts/model_tfjs
 ```
