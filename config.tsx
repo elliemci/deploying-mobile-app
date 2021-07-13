@@ -1,12 +1,12 @@
 const AppConfig =
 
 {
-    title : "Food Classifier"
+    title : "Food Image Classifier"
     ,description: `
 
-This app predicts a food category of a submited image. 
+This app predicts a food category of an image.
 
-The model was trained using the [Food-101 dataset](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) and TensorFlow 2.4.0.
+The fine tuned MobilNet V2 model was trained using the [Food-101 dataset](https://www.vision.ee.ethz.ch/datasets_extra/food-101/) and TensorFlow 2.4.0.
 
 Notes:
 - Time to inference will vary by user as it is dependent on the hardware.
