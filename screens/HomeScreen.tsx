@@ -23,7 +23,7 @@ import { ModelService, IModelPredictionResponse,IModelPredictionTiming,ModelPred
 
 
 type State = {
-  image: ImageManipulator.ImageResult; 
+  image: ImageManipulator.ImageResult;
   loading:boolean;
   isTfReady: boolean;
   isModelReady: boolean;
@@ -98,7 +98,7 @@ export default class HomeScreen extends React.Component<{},State> {
           return <ActivityIndicator/>
       }
       let predictions= this.state.predictions || [];
-   
+
       if (predictions.length > 0) {
           return (
               <View style={styles.predictionsContentContainer}>
@@ -126,7 +126,7 @@ export default class HomeScreen extends React.Component<{},State> {
                     <Text>preprocessing time: {this.state.timing?.imagePreprocessing}</Text>
                     <Text>prediction time: {this.state.timing?.imagePrediction}</Text>
                     <Text>decode time: {this.state.timing?.imageDecodePrediction}</Text>
-                   
+
                   </View>
 
               </View>
@@ -143,7 +143,7 @@ export default class HomeScreen extends React.Component<{},State> {
 
       if (status !== 'granted') {
           const { status, permissions }  = await Permissions.askAsync(Permissions.CAMERA, Permissions.CAMERA_ROLL)
-        
+
           if (status === 'granted') {
               console.log("Permissions granted");
               return true
@@ -192,7 +192,7 @@ export default class HomeScreen extends React.Component<{},State> {
 
         if (!response.cancelled) {
           //const source = { uri: response.uri }
-          
+
           this._classifyImage(response.uri)
         }
     }  catch (error) {
@@ -207,22 +207,22 @@ export default class HomeScreen extends React.Component<{},State> {
         [{ resize: { width:AppConfig.imageSize, height:AppConfig.imageSize }}],
         { compress: 1, format: ImageManipulator.SaveFormat.JPEG,base64:true }
         );
-      
+
       this.setState({ image: res})
       console.log('numTensors (before prediction): ' + tf.memory().numTensors);
       this.setState({ predictions: [] ,error:null , loading:true })
 
       const predictionResponse = await this.modelService.classifyImage(res);
-      
-      
+
+
       if (predictionResponse.error){
         this.setState({ error: predictionResponse.error , loading:false})
       }else{
         const predictions = predictionResponse.predictions  || null;
         this.setState({ predictions: predictions, timing:predictionResponse.timing,  loading:false})
       }
-      
-      
+
+
       //tf.dispose(predictions);
       console.log('numTensors (after prediction): ' + tf.memory().numTensors);
 
