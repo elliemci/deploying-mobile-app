@@ -1,8 +1,8 @@
 const AppConfig =
 
 {
-    title : "Food Image Classifier"
-    ,description: `
+    title : "Food Image Classifier",
+    description: `
 
 This app predicts a food category of an image.
 
