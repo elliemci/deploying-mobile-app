@@ -3,15 +3,10 @@
 
 ## About
 
-This repo is using deep learning model tensorflow.js with React Native.
-
-Here is the app in action.
-
-![In Action](demo/app_in_action.gif)
+In this repository provides a MobileNetV2 deep learning model with pre-trained ImageNet weights and fine tuned on Food 101 dataset as a food image classifier. It is TensorFlow.js converted and deployed in a mobile app using React Native.
 
 
-
-## Assumptions
+## Set up of the repo
 
 A tfjs model is placed in `assets/model_tfjs`
 
@@ -46,10 +41,11 @@ artifacts/model_tf_keras.h5 artifacts/model_tfjs
 
 
 
-## Running
+## Running the mobile app
 
 
 ```
+# install project dependencies with yarn
 yarn global add expo-cli    
 
 # you can open iOS, Android, or web from here, or run them directly with the commands below.
@@ -63,8 +59,15 @@ yarn ios
 
 
 ```
+Start the app
+Open the Expo app on your phone.
+You will see your project listed under "Recently in Development". Select it.
+In the mobile app at the top, you will see "Model Loaded". Once a green checkmark appears, you are ready to test an image.
 
 
+Here is the app in action.
+
+![In Action](demo/app_demo.gif)
 
 
 ## Future
