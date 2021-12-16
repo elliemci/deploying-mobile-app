@@ -70,16 +70,16 @@ Here is the app in action.
 ![In Action](demo/app_demo.gif)
 
 
-## Future
+## App structure
 
-Fo future out of date packages upgrade upgrade expo and its dependencies
+The app is composed of two screens, Home and About.
 
-```
-expo upgrade
-```
+The code for the Home screen is defined in HomeScreen.tsx.
 
-The below command command can be used to interactively update  dependencies.
+The Home screen contains logic for image selection, display prediction, and timing information. The core inferencing logic is delegated to ModelService.tsx.
 
-```
-yarn upgrade-interactive       
-```
+The code for the About screen is defined in AboutScreen.tsx.
+
+The AboutScreen.tsx renders a simple markdown file defined in config.tsx. Edit this config file to update the info displayed on the screen and other parameters used in the app such as image size, number of predictions, precision of the probability, and title.
+
+The core inferencing logic is defined in ModelService.tsx in components folder.
